@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
 <![endif]-->
@@ -22,6 +22,25 @@
 
 </head>
 <body>
+<div class="menu">
+
+      <!-- Menu icon -->
+
+
+      <!-- Menu -->
+      <ul>
+        <li><a href="https://github.com/geekpradd/">Home</a></li>
+    <li><a href="http://geekpradd.github.io/Notepad-By-Pradd-/">Notepad</a></li>
+    <li><a href="https://github.com/geekpradd/search-python">Python Search</a></li>
+    <li><a href="https://github.com/geekpradd/">About</a></li>
+      </ul><br>
+      <div class="icon-close">
+        <p>Close</p>
+      </div>
+      <div class="sign" style="margin-bottom:45px;">
+
+      </div>
+    </div>
 <div class="pure-menu pure-menu-open pure-menu-horizontal" style="position:fixed;padding-top:8px;padding-bottom:8px;background: #2d3e50;">
 <a href="#" class="pure-menu-heading" style="color: white;
 font-weight: 400;
@@ -32,6 +51,7 @@ font-size: 120%;">GeekPradd</a>
     <li><a href="https://github.com/geekpradd/search-python">Python Search</a></li>
     <li><a href="https://github.com/geekpradd/">About</a></li>
     </ul>
+    <div id="menu-pull"></div>
     </div>
 <div class="main" style="margin:0px auto;min-height:100%;padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:20px;"><br><br><br>
 <h2 align="center">Notepad By Pradd 3.0 - The Coolest Python based editor </h2>
@@ -73,6 +93,7 @@ font-size: 120%;">GeekPradd</a>
 <p>Created By Pradipta aka GeekPradd using JetBeans Python IDE and Sublime Text 3 on Python 2.7.6 <br>
 Copyright &copy; 2014. Akshat and Pradipta</p>
 </footer>
+
 <script type="text/javascript">
 function download(){
   window.location = "download.html";
@@ -80,6 +101,33 @@ function download(){
 function source(){
     window.location = "https://github.com/geekpradd/Notepad-By-Pradd-/";
 }
+var main= function(){
+  var menu=false
+  $('#menu-pull').click(function(){
+    if (menu===false){
+    $('.menu').animate({right:"0px"},200);
+    $('body').animate({right:"285px"},200);
+    $('#menu-pull').animate({right:'300px'},200);
+
+     menu=true;
+   }
+   else{
+    $('.menu').animate({right:"-285px"},200);
+    $('body').animate({right:"0px"},200);
+    $('#menu-pull').animate({right:'2%'},200);
+
+    menu=false
+   }
+  });
+  $('.icon-close').click(function(){
+    $('.menu').animate({right:"-285px"},200);
+    $('body').animate({right:"0px"},200);
+    $('#menu-pull').animate({right:'2%'},200);
+
+  });
+
+};
+$(document).ready(main);
 </script>
 </body>
 </html>
