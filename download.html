@@ -2,10 +2,9 @@
 <html>
 <head>
 <title>Notepad By Pradd</title>
-
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
 <![endif]-->
@@ -15,10 +14,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="author" content="Akshat Tripathi , Pradipta Bora"/>
-
+    <meta property="og:title" content="Programming Whiz">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta property="og:type" content="article">
-<style type="text/css">
+<style>
 p {
 font-family: 'Open Sans', sans-serif;
 font-size: 17px;
@@ -177,6 +176,7 @@ textarea.custom{
             background: rgb(66, 184, 221); /* this is a light blue */
         }
 
+
 </style>
 
 </head>
@@ -184,61 +184,76 @@ textarea.custom{
 <div class="pure-menu pure-menu-open pure-menu-horizontal" style="position:fixed;padding-top:8px;padding-bottom:8px;background: #2d3e50;">
 <a href="#" class="pure-menu-heading" style="color: white;
 font-weight: 400;
-font-size: 120%;">GeekPradd</a>
+font-size: 120%;">ProgrammingWhiz</a>
 <ul class="cs" style="float:right;padding-right:5px;">
     <li><a href="#"> Home </a></li>
     <li><a href="#">Notepad</a></li>
     <li><a href="#">Python Search</a></li>
     <li><a href="#">About</a></li>
     </ul>
-    </div>
+</div>
 <div class="main" style="margin:0px auto;min-height:100%;padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:20px;"><br><br><br>
-<h2 align="center">Notepad By Pradd 3.0 - The Coolest Python based editor </h2>
+<h2 align="center">Thank You for downloading</h2>
+<p><span id="time">Your download will begin shortly in 5 seconds</span>. Here are the steps on how to install:</p><br>
 
-<br><br>
-<div class="pure-g">
-<div class="pure-u-1 pure-u-md-1-2">
-<h4 style='padding-right:6px;'>Notepad By Pradd (Pradipta) is an Open Source Text Editor for Windows which is created using Python and provides numerous features over Notepad namely:</h4><br>
 <ol class="circles-list">
-<li><p>Notepad Clone with more features and runs on Python!</p></li>
-<li><p>Signature Support and Sticky Notes</p></li>
-<li><p>HTML Templates built in</p></li>
-<li><p>Launch code files directly in default program</p></li>
-<li><p>Highlighter Mode</p></li>
-<li><p>Keyboard shortcuts to insert custom signature</p></li>
+
+<li><p>Double click the downloaded installer file:<br><br>
+    <img src="http://www.programmingwhiz.hol.es/img/step1.jpg" style="max-width:100%;"></p></li>
+
+<li><p>After accepting the administrator options, click next and continue the setup.<br><br>
+    <img src="http://www.programmingwhiz.hol.es/img/step2.jpg" style="max-width:100%;"></p></li>
+
+<li><p>Wait for the Setup to finish installing and then click Finish.<br><br>
+    <img src="http://www.programmingwhiz.hol.es/img/step4.jpg" style="max-width:100%;"></p></li>
+
+<li><p>And voila..Notepad By Pradd is installed!</p><br><br>
+<img src="http://www.programmingwhiz.hol.es/img/step5.jpg" style="max-width:100%;"></p></li>
+
 </ol>
-</div>
-<div class="pure-u-1 pure-u-md-1-2">
-<br>
-<img src="img/f.jpg" style="max-width:100%;" />
-</div>
-
-</div>
-<br>
-<p> Source Code is available on GitHub <a href="https://github.com/geekpradd/Notepad-By-Pradd-/">here</a>. This Program has been tested on Windows 7/8 and 8.1 but should function on XP and Vista as well. Click the Button below to download:</p><br>
-<div class="pure-g">
-<div class="pure-u-1-2">
-<center><button onclick="download()" class="button-secondary pure-button">Download Now</button></center>
-</div>
-<div class="pure-u-1-2">
-<center><button onclick="source()" class="button-secondary pure-button">View Source</button></center>
-</div>
 
 
-</div></div>
-<br>
+
+
+
+
+
+</div>
 <footer style="padding:12px; text-align:center">
 
-<p>Created By Pradipta using JetBeans Python IDE and Sublime Text 3 on Python 2.7.6 <br>
-ProgrammingWhiz -- &copy; 2014. By Akshat and Pradipta</p>
+<p>Created By Pradd using JetBeans Python IDE and Sublime Text 3 on Python 2.7.6 <br>
+ProgrammingWhiz -- &copy; 2014. By Akshat and Pradd</p>
 </footer>
 <script type="text/javascript">
-function download(){
-  window.location = "download.html";
+var t= 4;
+function dxo(){
+  window.location='Notepad By Pradd Setup.exe';
+
+ }
+ function lop(){
+    var x = document.getElementById('time');
+    if (t===0){
+        x.innerHTML = "Download started";
+        t="x";
+    }
+    else if(t==="x"){
+
+    }
+    else {
+    x.innerHTML = "Your download will begin shortly in " + t + ' seconds';
+    t--;
 }
-function source(){
-    window.location = "https://github.com/geekpradd/Notepad-By-Pradd-/";
-}
+ }
+ setTimeout('dxo()',5000);
+ setInterval('lop()',1000);
+
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
