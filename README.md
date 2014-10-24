@@ -62,4 +62,7 @@ Performance Improvements.
 Have Fun and feel free to submit a push request to the Source!
 
 Pradipta (with help from Akshat)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e9ded170069594719884fee30cb24dca00d189a
