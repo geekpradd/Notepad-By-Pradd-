@@ -5,13 +5,15 @@ line-height: 1.5;
 padding: 8px 5px 14px 5px;
 }
 #menu-pull{
-    border-bottom: 17px double #eee;
-border-top: 6px solid #eee;
-height:5px;
-width:30px;
+background-image: url(../img/logo.png);
+background-repeat: no-repeat;
+background-size: auto;
+background-position: -82px -98px;
+height: 44px;
+width: 40px;
 position:fixed;
-top:12px;
-right:12px;
+top:4px;
+right:8px;
 }
 @media (min-width:600px){
     #menu-pull{
