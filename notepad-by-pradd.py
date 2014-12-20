@@ -11,7 +11,7 @@ from PySide import QtGui,QtCore
 
 #Function to create required options directory for preference files
 
-      
+setup="C:/Notepad By Pradd/"
 class frame(QtGui.QMainWindow):
       def __init__(self):
             super(frame,self).__init__()
@@ -25,7 +25,7 @@ class frame(QtGui.QMainWindow):
             op.triggered.connect(self.openfile)
             exita=QtGui.QAction(QtGui.QIcon('exit.png'),'&Exit',self)
             exita.setShortcut('Shift+X')
-            
+
             exita.triggered.connect(self.close)
             self.save=QtGui.QAction(QtGui.QIcon('exit.png'),'&Save As',self)
             self.save.setShortcut('Shift+S')
@@ -68,7 +68,7 @@ class frame(QtGui.QMainWindow):
             printpreview.triggered.connect(self.onPrintPreview)
             about=QtGui.QAction(QtGui.QIcon('exit.png'),'&About',self)
             about.triggered.connect(self.showAbout)
-            
+
             menu=self.menuBar()
             filemenu=menu.addMenu('&File')
             filemenu.addAction(new)
@@ -79,7 +79,7 @@ class frame(QtGui.QMainWindow):
             filemenu.addAction(printoption)
             filemenu.addAction(printpreview)
             filemenu.addAction(exita)
-            
+
             editmenu=menu.addMenu('&Edit')
             editmenu.addAction(undo)
             editmenu.addAction(redo)
@@ -95,12 +95,12 @@ class frame(QtGui.QMainWindow):
             toolsmenu.addAction(date)
             helpmenu=menu.addMenu('&Help')
             helpmenu.addAction(about)
-            
+
             self.setGeometry(200,200,550,450)
-            self.setWindowIcon(QtGui.QIcon('icon.png')) 
+            self.setWindowIcon(QtGui.QIcon('{0}icon.png'.format(setup)))
             self.setWindowTitle("Notepad By Pradd")
             self.show()
-            
+
       def showAbout(self):
             textstring='''<font size="5" family="Segoe UI" >Created By Pradipta using Python and Qt.<br>
 Based on the PySide Qt Wrapper for Python.<br>
@@ -109,7 +109,7 @@ Version 3.0 <br>
 Copyright 2014 Pradipta and Akshat</font>'''.format(str(sys.version)[:5:])
             self.help=QtGui.QWidget()
             self.help.setGeometry(200,200,400,350)
-            self.help.setWindowIcon(QtGui.QIcon('icon.png')) 
+            self.help.setWindowIcon(QtGui.QIcon('{0}icon.png'.format(setup)))
             self.help.setFixedSize(400,350)
             color = self.help.palette()
             color.setColor(self.help.backgroundRole(),QtCore.Qt.white)
@@ -164,18 +164,24 @@ Copyright 2014 Pradipta and Akshat</font>'''.format(str(sys.version)[:5:])
                   self.savefile()
       def fontEdit(self):
             font = QtGui.QFontDialog.getFont()
-            
+
             if font[1]:
-                  
+
                   x= str(font[0]).split(')')[0].split('(')[-1]
-                  
-                  
+
+
                   self.textEdit.setCurrentFont(font[0])
+      def opencmd(self):
+            self.location=path
+            with open(self.location,'r') as f:
+                  data=f.read()
+            self.setWindowTitle("Notepad By Pradd- {0}".format(self.location))
+            self.textEdit.setText(data)
       def openfile(self):
             try:
                   filename=QtGui.QFileDialog.getOpenFileName(self,"Open File",'C:/',"Text Files (*.txt)")
                   self.location=filename[0]
-            
+
                   with open(filename[0],'r') as f:
                         data=f.read()
                   self.setWindowTitle("Notepad By Pradd- {0}".format(self.location))
@@ -201,18 +207,27 @@ Copyright 2014 Pradipta and Akshat</font>'''.format(str(sys.version)[:5:])
             else:
                   event.ignore()
 
-
-
-    
-def main():
-      
+def runcmd():
+      global path
+      path=sys.argv[1]
       app=QtGui.QApplication(sys.argv)
       ex=frame()
-      
+      ex.opencmd()
+      sys.exit(app.exec_())
+
+def main():
+
+      app=QtGui.QApplication(sys.argv)
+      ex=frame()
+
       sys.exit(app.exec_())
 def newwindow():
   pass
-      
-      
+
+
 if __name__=='__main__':
-      main()
+      if len(sys.argv)>1:
+            runcmd()
+      else:
+
+            main()
