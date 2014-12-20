@@ -59,10 +59,18 @@ Program unified under a single setup, Just use the wizard to install. Windows 8.
 Moved GUI Toolkit to PySide based on Qt from Tkinter based on Tk. Print and Print Preview functions added. Ability to change font. Code size reduced.
 Performance Improvements.
 
+#### Version 3.1 
+
+PDF Support: Export, Open and Save files as PDFs
+Markdown Support: Compile Markdown to HTML, and save Markdown files
+Syntax Highlighting: For Python, C/C++, HTML5 and Markdown. More language support coming soon
+Font bugs fixed. Support for future functionality of default editor added. New File function added (It was incomplete before)
+Bug fixes and minor changes
+
+
 Have Fun and feel free to submit a push request to the Source!
 
 Pradipta (with help from Akshat)
-<<<<<<< HEAD
 
-=======
->>>>>>> 0e9ded170069594719884fee30cb24dca00d189a
+
+
